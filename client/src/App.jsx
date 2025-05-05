@@ -23,10 +23,11 @@ function App() {
   }, []);
 
   const inputRef = useRef();
-  const handleKeyDown = () => {
+  const handleKeyDown = (e) => {
     socket.emit("userMessage", inputRef.current.value);
     inputRef.current.value = "";
   };
+
   return (
     <div>
       <div class="chats">
@@ -35,7 +36,7 @@ function App() {
         </ul>
       </div>
       <footer class="textArea">
-        <form style={{ display: "flex", columnGap: "1rem", height: "3rem" }}>
+        <div style={{ display: "flex", columnGap: "1rem", height: "3rem" }}>
           <div style={{ display: "flex", margin: "0rem", width: "20rem" }}>
             <label for="exampleInputEmail1" class="form-label"></label>
             <input
@@ -43,14 +44,13 @@ function App() {
               type="text"
               class="form-control"
               id="exampleInputEmail1"
-              aria-describedby="emailHelp"
+              // aria-describedby="emailHelp"
             />
           </div>
-
-          <button type="submit" class="btn btn-primary" onSubmit={handleKeyDown}>
+          <button class="btn btn-primary" onClick={handleKeyDown}>
             send
           </button>
-        </form>
+        </div>
       </footer>
     </div>
   );
