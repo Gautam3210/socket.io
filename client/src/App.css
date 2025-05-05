@@ -1,0 +1,20 @@
+.textArea{
+  display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background: #587574;
+  
+}
+
+.chats{
+  display: flex;
+      align-items: center;
+      justify-content: center;
+}
